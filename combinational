@@ -1,0 +1,13 @@
+/* 
+ * Do not change Module name 
+*/
+module full_adder_gate(a,b,c,d,x);
+    input a,b,c,d; //inputs
+    output x;
+    wire,w1,w2,w3;
+    and g1(w1,a,b);
+    nor g2(w2,c,d);
+    and g3(w3,w1,w2);
+    nand g4 (x,w1,w3);
+    end
+endmodule
