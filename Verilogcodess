@@ -1,0 +1,12 @@
+/* 
+ * Do not change Module name 
+*/
+module gate(a,b,c,x);
+    input a,b,c; //inputs
+    output x;
+    wire w1,w2;
+        xor g1 (w1, a,b);
+        xnor g2 (w2,b,c);
+        and g3 (x,w1,w2,c);
+    end
+endmodule
