@@ -1,0 +1,13 @@
+module gate (x,y,z,m);
+      input (x,y,z); //inputs
+      output m;
+       wire w1,w2,w3,w4,w5;
+      not g1(w1,y);
+      not g2(w2,z);
+      and g3(w1,w2);
+      and g4(w3,y,z);
+      not g5(w4,y);
+      and g6(w5,w4,x);
+      Or g7(m,w1,w2,w3,w5);
+endmodule;
+       
