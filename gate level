@@ -34,7 +34,7 @@ module full-adder (A,B,Cin,S,Cout);
     and #(12) (w3,A,B);
     buf #(3) (B,Cin);
     xor #(12) (S,w1,B);
-    xor #(12) (w2,w1,B);
-    and #(12) (Cout,w2,w3);
+    and #(12) (w2,w1,B);
+    or #(12) (Cout,w2,w3);
  end
 endmodule
