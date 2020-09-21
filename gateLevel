@@ -1,0 +1,40 @@
+module full-adder (A,B,Cin,S,Cout);
+  input A,B,Cin;
+  output S,Cout;
+  wire w1,w2,w3,B;
+ if (A==O&&B==0) begin
+  xor #(1:2:3) (w1,A,B);
+  and #(1:2:3) (w3,A,B);
+  buf #(3:4:5) (B,Cin);
+  xor #(1:2:3) (S,w1,B);
+  and #(1:2:3) (w2,w1,B);
+  or #(1:2:3) (Cout,w2,w3);
+ end
+ else if (A==1 && B==0)
+ begin
+    xor #(4:5:6) (w1,A,B);
+    and #(4:5:6) (w3,A,B);
+    buf #(3:4:5) (B,Cin);
+    xor #(1:2:3) (S,w1,B);
+    and #(1:2:3) (w2,w1,B);
+    or #(1:2:3) (Cout,w2,w3);
+ end
+ else if (A==0 && B==1)
+ begin
+    xor #(1:2:3) (w1,A,B);
+    and #(1:2:3) (w3,A,B);
+    buf #(3:4:5) (B,Cin);
+    xor #(4:5:6) (S,w1,B);
+    and #(2:3:4) (w2,w1,B);
+    or #(4:5:6) (Cout,w2,w3);
+ end
+ else if (A==1 && B==1)
+ begin
+    xor #(4:5:6) (w1,A,B);
+    and #(4:5:6) (w3,A,B);
+    buf #(3:4:5) (B,Cin);
+    xor #(4:5:6) (S,w1,B);
+    and #(4:5:6) (w2,w1,B);
+    or #(4:5:6) (Cout,w2,w3);
+ end
+endmodule
